@@ -60,9 +60,9 @@ th:hover::after{
 }
 
 .table tr td:hover{
-    background-color: rgb(104, 255, 104);
+    background-color: rgb(41, 33, 33);
     color:aliceblue;
-    border: 2px solid rgb(12, 12, 12);
+    border: 2px solid rgb(255, 0, 0);
     font-weight: 800;
     letter-spacing: 1px;
 
