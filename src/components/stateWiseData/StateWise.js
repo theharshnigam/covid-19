@@ -12,8 +12,18 @@ const StateWise = () => {
 
     }
 
+    const getDailyData = async () => {
+        const local = await fetch('https://api.covid19api.com/summary');
+        const localData = await local.json();
+        const dailydata = localData.Countries[76].NewConfirmed;
+        alert(`New Confirmed Cases in India : ${dailydata} 
+        Stay Safe! India`);
+    }
+    
+
     useEffect(() => {
         getCovidData();
+        getDailyData();
     }, [])
 
     return (
@@ -21,6 +31,7 @@ const StateWise = () => {
             <div className="container mt-5">
                 <div className="main-heading">
                     <h1 className="mb-5 text-center">COVID-19 Dashboard <br/> <span>INDIA</span></h1>
+                    
                 </div>
                 <div className="table-responsive">
                     <table className="table table-hover ">
@@ -36,7 +47,7 @@ const StateWise = () => {
                         </thead>
                         <tbody>
                             {
-                                data.map((curElem, Index) => {
+                                data.map((curElem) => {
                                     return (
                                         <tr>
                                             <td>{curElem.state}</td>
