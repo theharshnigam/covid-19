@@ -7,8 +7,7 @@ const StateWise = () => {
     const getCovidData = async () => {
         const res = await fetch('https://api.covid19india.org/data.json');
         const actualData = await res.json();
-        console.log(actualData.statewise)
-        setdata(actualData.statewise)
+        setdata(actualData.statewise);
 
     }
 
@@ -16,8 +15,12 @@ const StateWise = () => {
         const local = await fetch('https://api.covid19api.com/summary');
         const localData = await local.json();
         const dailydata = localData.Countries[76].NewConfirmed;
-        alert(`New Confirmed Cases in India : ${dailydata} 
-        Stay Safe! India`);
+        const dailyNewDeath = localData.Countries[76].NewDeaths;
+        const updatedDate = localData.Countries[76].Date;
+        alert(`New Confirmed Cases : ${dailydata}
+                New Deaths : ${dailyNewDeath} 
+                Updated On : ${updatedDate}
+                Stay Home, Stay Safe!`);
     }
     
 
