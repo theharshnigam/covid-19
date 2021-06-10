@@ -38,7 +38,7 @@ const StateWise = () => {
                 </div>
                 <div className="table-responsive">
                     <table className="table table-hover ">
-                        <thead className= "table-dark" >
+                        <thead className= "table-dark " >
                             <tr>
                                 <th >State</th>
                                 <th >Confirmed</th>
