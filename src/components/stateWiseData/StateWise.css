@@ -53,7 +53,7 @@ th:hover::after{
 .table tr td:hover:nth-child(5){
     background-color:rgb(255, 0, 0, 0.8);
     color: aliceblue;
-    border: 1.5px solid black;
+    border: 2px solid black;
     font-weight: 800;
     letter-spacing: 0.5px;
     
@@ -62,7 +62,7 @@ th:hover::after{
 .table tr td:hover{
     background-color: rgb(0, 255, 0, 0.7);
     color:black;
-    border: 1.5px solid rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
     font-weight: 800;
     letter-spacing: 0.5px;
 
