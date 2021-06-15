@@ -17,10 +17,16 @@ const StateWise = () => {
         const dailydata = localData.Countries[76].NewConfirmed;
         const dailyNewDeath = localData.Countries[76].NewDeaths;
         const updatedDate = localData.Countries[76].Date;
+        const myDate = new Date(updatedDate).toLocaleDateString();
+        const myTime = new Date(updatedDate).toLocaleTimeString();
         alert(`New Confirmed Cases : ${dailydata}
                 New Deaths : ${dailyNewDeath} 
-                Updated On : ${updatedDate}
-                Stay Home, Stay Safe!`);
+                Updated On : ${myTime},  ${myDate}
+                Stay Home, Stay Safe India.!`);
+        
+        console.log(updatedDate)
+        console.log(myDate)
+        console.log(myTime)
     }
     
 
