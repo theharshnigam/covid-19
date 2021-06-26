@@ -8,31 +8,35 @@ const StateWise = () => {
         const res = await fetch('https://api.covid19india.org/data.json');
         const actualData = await res.json();
         setdata(actualData.statewise);
-
+        let dailyData = actualData.cases_time_series[actualData.cases_time_series.length-1];
+        alert(`New Confirmed Cases : ${dailyData.dailyconfirmed}
+                New Deaths : ${dailyData.dailydeceased} 
+                Updated On : ${dailyData.date}
+                "Stay Home, Stay Safe India" ❤`);
     }
 
-    const getDailyData = async () => {
-        const local = await fetch('https://api.covid19api.com/summary');
-        const localData = await local.json();
-        const dailydata = localData.Countries[76].NewConfirmed;
-        const dailyNewDeath = localData.Countries[76].NewDeaths;
-        const updatedDate = localData.Countries[76].Date;
-        const myDate = new Date(updatedDate).toLocaleDateString();
-        const myTime = new Date(updatedDate).toLocaleTimeString();
-        alert(`New Confirmed Cases : ${dailydata}
-                New Deaths : ${dailyNewDeath} 
-                Updated On : ${myTime},  ${myDate}
-                Stay Home, Stay Safe India.!`);
+    // const getDailyData = async () => {
+    //     const local = await fetch('https://api.covid19api.com/summary');
+    //     const localData = await local.json();
+    //     const dailydata = localData.Countries[76].NewConfirmed;
+    //     const dailyNewDeath = localData.Countries[76].NewDeaths;
+    //     const updatedDate = localData.Countries[76].Date;
+    //     const myDate = new Date(updatedDate).toLocaleDateString();
+    //     const myTime = new Date(updatedDate).toLocaleTimeString();
+        // alert(`New Confirmed Cases : ${dailydata}
+        //         New Deaths : ${dailyNewDeath} 
+        //         Updated On : ${myTime},  ${myDate}
+        //         Stay Home, Stay Safe India.!`);
         
-        console.log(updatedDate)
-        console.log(myDate)
-        console.log(myTime)
-    }
+    //     // console.log(updatedDate)
+    //     // console.log(myDate)
+    //     // console.log(myTime)
+    //     // console.log(dailydata)
+    // }
     
 
     useEffect(() => {
         getCovidData();
-        getDailyData();
     }, [])
 
     return (
