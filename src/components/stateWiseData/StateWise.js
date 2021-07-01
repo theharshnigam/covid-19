@@ -15,23 +15,15 @@ const StateWise = () => {
                 "Stay Home, Stay Safe India" ❤`);
     }
 
-    // const getDailyData = async () => {
-    //     const local = await fetch('https://api.covid19api.com/summary');
+    // const getDistrictWiseData = async () => {
+    //     const local = await fetch('https://api.covid19india.org/district_wise.json');
     //     const localData = await local.json();
-    //     const dailydata = localData.Countries[76].NewConfirmed;
-    //     const dailyNewDeath = localData.Countries[76].NewDeaths;
-    //     const updatedDate = localData.Countries[76].Date;
-    //     const myDate = new Date(updatedDate).toLocaleDateString();
-    //     const myTime = new Date(updatedDate).toLocaleTimeString();
-        // alert(`New Confirmed Cases : ${dailydata}
-        //         New Deaths : ${dailyNewDeath} 
-        //         Updated On : ${myTime},  ${myDate}
-        //         Stay Home, Stay Safe India.!`);
-        
-    //     // console.log(updatedDate)
-    //     // console.log(myDate)
-    //     // console.log(myTime)
-    //     // console.log(dailydata)
+    //     console.log(localData.districts[7])
+
+
+    //     if(localData.districts.state === "Uttar Pradesh"){
+    //         console.log(localData.districts);
+    //     }
     // }
     
 
