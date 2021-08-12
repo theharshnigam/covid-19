@@ -38,7 +38,6 @@ const StateWise = () => {
                     <p style={{fontSize:"50%"}}>
                     <Typical
                             loop={Infinity}
-                            wrapper="b"
                             steps = {['😷 Wear Mask 😷',3000,
                                     '🏡 Stay Home 🏡',3000,
                                     '🙂 Stay Safe 🙂',3000,]}
