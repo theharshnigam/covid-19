@@ -11,7 +11,7 @@
     margin: auto;
 }
 h1{
-    box-shadow:rgb(255, 0, 0) 0 13px 10px -8px;
+    box-shadow:rgb(6, 48, 240) 0 13px 10px -8px;
 }
 h1:hover{
     letter-spacing: 10px;
@@ -21,7 +21,7 @@ h1:hover{
 
 .table-responsive{
     max-height: 450px;
-    box-shadow: rgb(0, 4, 255) 0 25px 50px -15px;
+    box-shadow: rgb(0, 0, 0) 0 25px 50px -15px;
 }
 tr:hover{
     background-color:rgb(235, 235, 235);

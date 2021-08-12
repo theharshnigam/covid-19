@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Typical from 'react-typical';
 
 const StateWise = () => {
 
@@ -18,25 +19,31 @@ const StateWise = () => {
     // const getDistrictWiseData = async () => {
     //     const local = await fetch('https://api.covid19india.org/district_wise.json');
     //     const localData = await local.json();
-    //     console.log(localData.districts[7])
-
-
-    //     if(localData.districts.state === "Uttar Pradesh"){
-    //         console.log(localData.districts);
-    //     }
-    // }
+    //     console.log(localData.districts)
+    //     alert(`Lakhimpur Kheri : `)
+   // }
     
 
     useEffect(() => {
         getCovidData();
+      
     }, [])
 
     return (
         <>
             <div className="container mt-5">
                 <div className="main-heading">
-                    <h1 className="mb-5 text-center">COVID-19 Dashboard <br/> <span>INDIA</span></h1>
-                    
+                    <h1 className="mb-5 text-center">
+                    COVID-19 Dashboard of <br/> <b><span>INDIA</span> </b> <br/>
+                    <p style={{fontSize:"50%"}}>
+                    <Typical
+                            loop={Infinity}
+                            steps = {['😷 Wear Mask 😷',4000,
+                                    '🏡 Stay Home 🏡',4000,
+                                    '🙂 Stay Safe 🙂',4000,]}
+                        />
+                    </p> 
+                    </h1>
                 </div>
                 <div className="table-responsive">
                     <table className="table table-hover ">
