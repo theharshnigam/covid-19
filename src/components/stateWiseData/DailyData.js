@@ -27,7 +27,7 @@ return (
         <div className="container mt-5">
             <div className="main-heading">
                 <h1 className="mb-5 text-center">
-                <b>Daily</b> Covid Cases in India
+                <b>Daily</b> cases of Covid-19 (India)
                 <p style={{fontSize:"50%"}}>
                 <Typical
                         loop={Infinity}
