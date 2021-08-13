@@ -11,9 +11,6 @@ const DailyData = () => {
         const res = await fetch('https://api.covid19india.org/data.json');
         const actualData = await res.json();
         setDailyData(actualData.cases_time_series);
-        let dailyData = actualData.cases_time_series[0];
-        console.log(actualData)
-        alert(`New covid cases  "${dailyData.dailyconfirmed}" on ${dailyData.date}`);
     }
 
 
