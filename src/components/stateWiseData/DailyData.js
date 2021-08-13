@@ -44,10 +44,11 @@ return (
                 <table className="table table-hover ">
                     <thead className= "table-dark " >
                         <tr>
-                            <th >Daily Confirmed</th>
-                            <th >Daily Recoverd</th>
-                            <th >Daily Deaths</th>
                             <th >Last Update</th>
+                            <th >Daily Confirmed</th>
+                            <th >Daily Deaths</th>
+                            <th >Daily Recoverd</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -55,10 +56,10 @@ return (
                             dailyData.reverse().map((curElem) => {
                                 return (
                                     <tr>
+                                         <td>{curElem.date}</td>
                                         <td>{curElem.dailyconfirmed}</td>
-                                        <td>{curElem.dailyrecovered}</td>
                                         <td>{curElem.dailydeceased}</td>
-                                        <td>{curElem.date}</td>
+                                        <td>{curElem.dailyrecovered}</td>
                                     </tr>
 
                                 )
