@@ -18,7 +18,7 @@ const Menu = () => {
                                 
                             </li>
                             <li class="nav-item">
-                            <NavLink exact activeClassName = "nav-link active active_class" style={{textDecoration:"none"}} to = "/statewise"> Statewise Data   </NavLink> 
+                            <NavLink exact activeClassName = "nav-link active active_class" style={{textDecoration:"none"}} to = "/covid-19/statewise"> Statewise Data   </NavLink> 
                                
                             </li>
 
