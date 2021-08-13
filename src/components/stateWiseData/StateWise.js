@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Typical from 'react-typical';
 
+
 const StateWise = () => {
 
     const [data, setdata] = useState([])
@@ -10,10 +11,8 @@ const StateWise = () => {
         const actualData = await res.json();
         setdata(actualData.statewise);
         let dailyData = actualData.cases_time_series[actualData.cases_time_series.length-1];
-        alert(`New Confirmed Cases : ${dailyData.dailyconfirmed}
-                New Deaths : ${dailyData.dailydeceased} 
-                Updated On : ${dailyData.date}
-                "Stay Home, Stay Safe India" ❤`);
+        console.log(actualData)
+        alert(`New covid cases  "${dailyData.dailyconfirmed}" on ${dailyData.date}`);
     }
 
     // const getDistrictWiseData = async () => {
