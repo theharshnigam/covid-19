@@ -14,7 +14,7 @@ const App = () => {
     
       <Switch>
         <Route exact path= "/covid-19"  component={DailyData} />
-        <Route path= "/" component={StateWise} />
+        <Route path= "/statewise" component={StateWise} />
       </Switch>
    
 

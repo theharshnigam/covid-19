@@ -10,9 +10,7 @@ const StateWise = () => {
         const res = await fetch('https://api.covid19india.org/data.json');
         const actualData = await res.json();
         setdata(actualData.statewise);
-        let dailyData = actualData.cases_time_series[actualData.cases_time_series.length-1];
-        console.log(actualData)
-        alert(`New covid cases  "${dailyData.dailyconfirmed}" on ${dailyData.date}`);
+        
     }
 
     // const getDistrictWiseData = async () => {
