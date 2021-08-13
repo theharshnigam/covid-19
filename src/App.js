@@ -13,7 +13,7 @@ const App = () => {
       <Menu />
     
       <Switch>
-        <Route exact path= "/"  component={StateWise} />
+        <Route exact path= "/covid-19"  component={StateWise} />
         <Route path= "/dailydata" component={DailyData} />
       </Switch>
    
