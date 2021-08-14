@@ -7,10 +7,14 @@ const DailyData = () => {
     const [dailyData, setDailyData] = useState([])
 
     const getDailyData = async() => {
-
-        const res = await fetch('https://api.covid19india.org/data.json');
-        const actualData = await res.json();
-        setDailyData(actualData.cases_time_series);
+        try {
+            const res = await fetch('https://api.covid19india.org/data.json');
+            const actualData = await res.json();
+            setDailyData(actualData.cases_time_series);
+        } catch (error) {
+            alert(` ${error}, Please try again after sometime. . ❗`)
+        }
+       
     }
 
 
