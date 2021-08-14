@@ -8,7 +8,7 @@ const DailyData = () => {
 
     const getDailyData = async() => {
         try {
-            const res = await fetch('https://api.covid19india.org/data.json');
+            const res = await fetch('https://data.covid19india.org/data.json');
             const actualData = await res.json();
             setDailyData(actualData.cases_time_series);
         } catch (error) {
