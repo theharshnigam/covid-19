@@ -14,13 +14,13 @@ const Menu = () => {
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                            <NavLink exact activeClassName = "nav-link active active_class" style={{textDecoration:"none"}} to = "/covid-19">  Daily Data  </NavLink>
+                            <NavLink exact activeClassName = "nav-link active active_class" style={{textDecoration:"none"}} to = "/covid-19">  Statewise Data  </NavLink>
                                 
                             </li>
-                            <li class="nav-item">
+                            {/* <li class="nav-item">
                             <NavLink exact activeClassName = "nav-link active active_class" style={{textDecoration:"none"}} to = "/covid-19/statewise"> Statewise Data   </NavLink> 
                                
-                            </li>
+                            </li> */}
 
 
                         </ul>

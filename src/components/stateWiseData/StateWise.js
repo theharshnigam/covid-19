@@ -9,14 +9,20 @@ const StateWise = () => {
     const getCovidData = async () => {
 
         try {
-            const res = await fetch('https://data.covid19india.org/data.json');
+            // const res = await fetch('https://data.covid19india.org/data.json');
+            
+            const res = await fetch('https://disease.sh/v3/covid-19/gov/India')
             const actualData = await res.json();
-            setdata(actualData.statewise);
-            let dailyData = actualData.cases_time_series[actualData.cases_time_series.length - 1];
+            setdata(actualData.states)
+            // setdata(actualData.statewise);
+            // let dailyData = actualData.cases_time_series[actualData.cases_time_series.length - 1];
+            const date = new Date(actualData.updated)
             console.log(actualData)
-            alert(`New covid cases  "${dailyData.dailyconfirmed}" on ${dailyData.date}`);
+            // alert(`New covid cases  "${dailyData.dailyconfirmed}" on ${dailyData.date}`);
+            alert(`Today cases: ${actualData.total.todayCases} on 
+            ${date.toDateString()}`)
         } catch (error) {
-            alert(` ${error}, Please try again after sometime. . ❗`)
+            alert(` ${error}, Please try again after sometime. . ❗`) 
         }
 
 
@@ -60,7 +66,8 @@ const StateWise = () => {
                                 <th >Active</th>
                                 <th >Recoverd</th>
                                 <th >Deaths</th>
-                                <th >Last Update</th>
+                                <th >Today Confirmed</th>
+                                <th >Today Deaths</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -69,11 +76,12 @@ const StateWise = () => {
                                     return (
                                         <tr>
                                             <td>{curElem.state}</td>
-                                            <td>{curElem.confirmed}</td>
+                                            <td>{curElem.cases}</td>
                                             <td>{curElem.active}</td>
                                             <td>{curElem.recovered}</td>
                                             <td>{curElem.deaths}</td>
-                                            <td>{curElem.lastupdatedtime}</td>
+                                            <td>{curElem.todayCases}</td>
+                                            <td>{curElem.todayDeaths}</td>
                                         </tr>
 
                                     )

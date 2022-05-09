@@ -8,9 +8,9 @@ const DailyData = () => {
 
     const getDailyData = async() => {
         try {
-            const res = await fetch('https://data.covid19india.org/data.json');
+            const res = await fetch('https://disease.sh/v3/covid-19/gov/India');
             const actualData = await res.json();
-            setDailyData(actualData.cases_time_series);
+            setDailyData(actualData.total);
         } catch (error) {
             alert(` ${error}, Please try again after sometime. . ❗`)
         }
@@ -46,21 +46,23 @@ return (
                     <thead className= "table-dark " >
                         <tr>
                             <th >Last Update</th>
-                            <th >Daily Confirmed</th>
-                            <th >Daily Deaths</th>
-                            <th >Daily Recoverd</th>
+                            <th >Today Cases</th>
+                            <th >Today Deaths</th>
+                            <th >Today Recovered</th>
+                            <th >Total Active cases</th>
                             
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            dailyData.reverse().map((curElem) => {
+                            dailyData.map((curElem) => {
                                 return (
                                     <tr>
-                                         <td>{curElem.date}</td>
-                                        <td>{curElem.dailyconfirmed}</td>
-                                        <td>{curElem.dailydeceased}</td>
-                                        <td>{curElem.dailyrecovered}</td>
+                                        <td>{curElem.total.updated}</td>
+                                        <td>{curElem.total.todayCases}</td>
+                                        <td>{curElem.total.todayDeaths}</td>
+                                        <td>{curElem.total.todayRecovered}</td>
+                                        <td>{curElem.total.active}</td>
                                     </tr>
 
                                 )
